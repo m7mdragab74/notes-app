@@ -4,8 +4,8 @@ import 'package:notes_app/widget/notes_view_body.dart';
 
 import '../widget/add_note_bottom_sheet.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class NotesView extends StatelessWidget {
+  const NotesView({super.key});
 
   @override
   Widget build(BuildContext context) {
