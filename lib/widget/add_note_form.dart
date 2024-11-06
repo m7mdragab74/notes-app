@@ -58,7 +58,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         title: title!,
                         subTitle: subTitle!,
                         date: DateTime.now().toString(),
-                        color: Colors.black.value);
+                        color: Colors.blue.value);
                     BlocProvider.of<AddNotesCubit>(context).addNote(noteModel);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
