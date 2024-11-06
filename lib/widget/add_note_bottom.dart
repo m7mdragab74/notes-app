@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constant.dart';
 
 class AddNoteBottom extends StatelessWidget {
-  const AddNoteBottom({super.key, this.onTap});
+  const AddNoteBottom({super.key, this.onTap, this.isLoading = false});
   final void Function()? onTap;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -13,15 +14,19 @@ class AddNoteBottom extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: kPrimaryColor, borderRadius: BorderRadius.circular(10)),
-        child: const Center(
-          child: Text(
-            'Add',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
-          ),
+        child: Center(
+          child: isLoading
+              ? const CircularProgressIndicator(
+                  color: Colors.black,
+                )
+              : const Text(
+                  'Add',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
         ),
       ),
     );
