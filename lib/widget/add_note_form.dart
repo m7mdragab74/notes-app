@@ -30,7 +30,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       child: Column(
         children: [
           CustomFormTextField(
-            onSaved: (value) {
+            onChanged: (value) {
               title = value;
             },
             hint: 'Title',
@@ -39,7 +39,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 20,
           ),
           CustomFormTextField(
-            onSaved: (value) {
+            onChanged: (value) {
               subTitle = value;
             },
             hint: 'Content',
@@ -60,7 +60,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         DateFormat.yMd().format(currentDate);
                     var noteModel = NoteModel(
                         title: title!,
-                        subTitle: subTitle!,
+                        content: subTitle!,
                         date: formateCurrentDate,
                         color: Colors.blue.value);
                     BlocProvider.of<AddNotesCubit>(context).addNote(noteModel);
